@@ -44,7 +44,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Fuzzing dependencies:")
+	fmt.Println("Projects that are being fuzzed:")
 	var ops uint64
 	var wg sync.WaitGroup
 
@@ -65,8 +65,8 @@ func main() {
 	}
 	wg.Wait()
 	fmt.Println("-----------------")
-	fmt.Println("The number of dependencies are", len(dependencies))
-	fmt.Println("The number of dependencies that are fuzzed are", ops)
+	fmt.Println("Total number of dependencies :", len(dependencies))
+	fmt.Println("The number of dependencies that are fuzzed :", ops)
 }
 
 // fuzzed checks if the dependency is fuzzed by checking the scorecard API
